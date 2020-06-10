@@ -1,0 +1,36 @@
+@mixin space-between-center {
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin start-center {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@mixin center-center {
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin center-down {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}   
+
+@mixin bg {
+    background-attachment: scroll;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.55);
+}

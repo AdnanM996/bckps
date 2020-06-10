@@ -1,0 +1,12 @@
+.women-banner {
+    height: 100%;
+    width: 100%;
+    background-image: url(../../images/womanbg.jpg);
+    @include bg;
+    background-attachment: fixed;
+
+    & .wrapper {
+        @include start-center;
+        height: 100%;
+    }
+}

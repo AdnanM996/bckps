@@ -1,0 +1,329 @@
+.hero {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    @media only screen and(min-width: $medium-device){
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__left {
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        z-index: 2;
+        width: 100%;
+        color: $white;
+        & .wrapper {
+            height: 100vh;
+            max-width: 700px;
+            width: 80%;
+            @include start-center;
+        }
+        @media only screen and(min-width: $medium-device){
+            position: relative;
+            background-color: $grey-dark;
+            height: 100%;
+        }
+    }
+    &__right {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+
+        @media only screen and(min-width: $medium-device){
+            position: relative;
+            height: 100%;
+        }
+    }
+
+    &__text {
+        & h1 {
+            margin-bottom: 1.7rem;
+            line-height: 1;
+        }
+
+        & p {
+            margin: 3.5rem 0rem 7.5rem 0rem;
+            font-size: 2.4rem;
+        }
+    }
+}
+
+.choise {
+    padding: 5rem 0rem;
+
+    & .wrapper {
+        width: 90%;
+        justify-content: space-between;
+        flex-direction: column;
+
+        @media only screen and(min-width: $medium-device) {
+            flex-direction: row;
+        }
+    }
+
+    &__left {
+        background-image: url(../../images/womenbackpack.jpg);
+        @include bg;
+        height: 100vh;
+        width: 100%;
+        margin-bottom: 5rem;
+    }
+
+    &__right {
+        background-image: url(../../images/manbackpack.jpg);
+        @include bg;
+        height: 100vh;
+        width: 100%;
+    }
+
+    &__left,
+    &__right {
+        display: flex;
+        @include center-center;
+        position: relative;
+        
+        & .text__area {
+            position: relative;
+            z-index: 2;
+        }
+
+        &::after {
+            content: '';
+            @include overlay;
+
+        }
+    }
+}
+
+.bag-text {
+    background-color: $grey-light;
+    padding: 10rem 0rem;
+
+    & .wrapper {
+        @include center-center;
+        flex-direction: column-reverse;
+        height: 100%;
+
+        @media only screen and(min-width: $medium-device) {
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+        }
+    }
+
+    &__left {
+        margin-top: 15rem;
+
+        @media only screen and(min-width: $medium-device) {
+            margin-top: 0;
+            margin-right: 10rem;
+        }
+    }
+
+    &__right {
+        width: 100%;
+
+        @media only screen and(min-width: $medium-device) {
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100%;
+        }
+
+        & .text__area {
+            width: 100%;
+            height: 100%;
+    
+            & h2 {
+                font-size: 3.6rem;
+                margin-bottom: 2.5rem;
+            }
+    
+            & p {
+                margin-bottom: 5rem;
+            }
+        }
+    }
+}
+
+.sponsors {
+    padding: 5rem 0rem;
+
+    .wrapper {
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    & .scroll__text {
+        display: grid;
+        grid-template-columns: repeat(4, 100%);
+        
+
+        & p {
+            width: 100%;
+        }
+    }
+
+    & .line {
+        height: 2px;
+        width: 100%;
+        background-color: $grey-light;
+        margin-bottom: 7.5rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    & .timeline {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transform: translateY(-50%);
+        background-color: #000;
+        height: 4px;
+        width: 0%;
+        animation: timeline 5s ease-in infinite;
+    }
+
+    &__icons {
+        & ul {
+            display: flex;
+        }
+
+        & li {
+            cursor: pointer;
+            &:not(:last-child) {
+                margin-right: 5rem;
+            }
+
+            & img {
+                height: 3.6rem;
+                width: 3.6rem;
+            }
+        }
+    }
+}
+
+@keyframes timeline {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.how-it-works {
+    padding: 10rem 0rem;
+    background-image: url(../../images/texture-bg.jpg);
+    @include bg;
+    color: $white;
+
+    & ul {
+        margin-top: 5rem;
+    }
+
+    & li {
+        font-size: 1.6rem;
+        font-weight: 300;
+        &:not(:last-child) {
+            margin-bottom: 1.6rem;
+        }
+        & i {
+            margin-right: 1.6rem;
+        }
+    }
+}
+
+.split-img {
+    padding: 5rem 0rem;
+
+   & .wrapper {
+       width: 90%;
+       justify-content: space-between;
+       align-items: flex-start;
+       flex-direction: column;
+
+       @media only screen and(min-width: $medium-device) {
+           flex-direction: row;
+       }
+   }
+
+   &--top {
+       margin-bottom: 5rem;
+   }
+
+   &--top,
+   &--bottom {
+       width: 100%;
+       & .left__side {
+           background-image: url(../../images/img1.jpg);
+           @include bg;
+           position: relative;
+           height: 100vh;
+           width: 100%;
+           display: flex;
+           @include center-center;
+
+           & .text__area {
+               width: 60%;
+               position: relative;
+               z-index: 2;
+               position: absolute;
+               top: 50%;
+               transform: translate(-50%);
+               width: 250px;
+               color: $white;
+
+               & h2 {
+                   margin-bottom: 2.5rem;
+               }
+
+               & .cta {
+                   margin-top: 2.5rem;
+                   display: flex;
+                   justify-content: space-between;
+                   align-items: center;
+
+                   & i {
+                       display: inline-block;
+                   }
+               }
+           }
+
+           &::after {
+               content: '';
+               @include overlay
+           }
+       }
+
+       & .right__side {
+           display: none;
+       }
+   }
+   &--bottom {
+       & .left__side {
+           background-image: url(../../images/shop.webp);
+       }
+
+       & .right__side {
+        background-image: url(../../images/img4.jpg);
+    }
+   }
+}
+
+.slider {
+
+    &__text {
+        padding: 5rem 0rem;
+        
+        & .wrapper {
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+}

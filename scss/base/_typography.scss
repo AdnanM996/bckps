@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $font-primary;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-primary;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+h1 {
+    font-size: 7rem;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 6rem;
+    font-weight: 7.2rem;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 3.6rem;
+    margin-bottom: 2.5rem;
+}
+
+.logo a {
+    font-family: 'Audiowide', cursive;
+}
+
+.heading {
+    &--white {
+        color: $white;
+    }
+
+    &--black {
+        color: $text-dark;
+    }
+}
+
+.banner--text {
+    font-size: 3.2rem;
+    color: $white;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.action {
+    color: $text-light;
+    display: inline-block;
+    font-size: 1.4rem;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all .3s cubic-bezier(1, 0, 0, 1);
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 1px;
+        width: 100%;
+        transform: translateX(-100%);
+        transition: all .3s cubic-bezier(1, 0, 0, 1);
+        background-color: $text-dark;
+    }
+
+    &:hover {
+        color: $text-dark;
+
+        &::after {
+            transform: translateX(0%);
+        }
+    }
+}
+
+.text {
+    padding: 1rem 0rem;
+
+    & p {
+        line-height: 1;
+        font-size: 1.6rem;
+    }
+
+    & a {
+        display: inline-block;
+        line-height: 1;
+        margin-left: 2.5rem;
+        font-size: 1.2rem;
+    }
+}

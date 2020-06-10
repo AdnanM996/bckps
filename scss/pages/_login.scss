@@ -1,0 +1,30 @@
+.account {
+    background-color: $white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    @include center-center;
+
+    .wrapper {
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+
+        @media only screen and(min-width: $large-device) {
+            width: auto;
+        }
+
+        @media only screen and(min-width: $extra-large-device) {
+            width: auto;
+        }
+    }
+
+    & .text__area {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,73 @@
+.footer {
+    & form {
+        width: 100%;
+
+        & .container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid $grey-light;
+            margin-bottom: 1.6rem;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            outline-width: 0;
+            padding: 1.6rem;
+            text-emphasis: none;
+        }
+
+        & button {
+            background-color: transparent;
+            border: none;
+            outline-width: none;
+            padding: 1.6rem;
+            cursor: pointer;
+        }
+    }
+}
+
+.account--form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;  //for larger devices
+    margin-top: 2.5rem;
+
+    @media only screen and(min-width: $large-device) {
+        width: 680px;
+    }
+
+    @media only screen and(min-width: $extra-large-device) {
+        width: 680px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        background-color: transparent;
+        border: none;
+        border: 1px solid #000;
+        //color: $grey-light;
+        color: #000;
+        display: inline-block;
+        font-size: 1.4rem;
+        font-weight: 300;
+        line-height: 1.6;
+        margin-bottom: 2.5rem;
+        outline-width: 0;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    & .buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 5rem;
+    }
+}

@@ -1,0 +1,46 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    padding: 2rem 0rem;
+    background-color: $grey-dark;
+    @media only screen and(min-width: $medium-device) {
+        background-color: transparent;
+    }
+
+    & .wrapper {
+        width: 95%;
+        @include space-between-center;
+    }
+
+    & .logo {
+        position: relative;
+        z-index: 99;
+        & a {
+            color: $white;
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: .3rem;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+    }
+
+    &__left {
+        display: flex;
+        @include space-between-center;
+        flex: 2;
+        margin-right: auto;
+    }
+
+    &__right {
+        display: flex;
+    }
+}
+
+.bgheader {
+    background-color: $grey-dark;
+}

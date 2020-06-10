@@ -1,0 +1,108 @@
+.nav {
+    display: none;
+
+    @media only screen and(min-width: $medium-device) {
+        display: flex;
+        & ul {
+            display: flex;
+            margin-right: 5rem;
+        }
+        & li {
+            &:not(:last-child) {
+                margin-right: 2.5rem;
+            }
+        }
+
+        & a {
+            color: $white;
+            display: inline-block;
+            font-size: 1.6rem;
+            font-weight: 400;
+            text-decoration: none;
+            text-transform: capitalize;
+        }
+     }
+
+    &__icon {
+        display: flex;
+        margin-right: 3.5rem;
+
+        @media only screen and(min-width: $medium-device) {
+            margin-right: 0;
+         }
+
+        & li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            &:not(:last-child) {
+                margin-right: 2.5rem;
+            }
+        }
+
+        & i {
+            display: inline-block;
+            color: $white;
+
+            & ~ span {
+                display: inline-block;
+                margin-left: .75rem;
+                color: $white;
+                line-height: 1;
+            }
+        }
+    }
+
+    //Open-nav
+    &__open {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        height: 100%;
+        width: 100%;
+        background-color: $white;
+        padding: 5rem 2.5rem;
+
+        & ul {
+            width: 100%;
+        }
+
+        & li {
+            &:not(:last-child) {
+                margin: $margin-25;
+            }
+        }
+
+        & a {
+            color: $text-dark;
+            display: inline-block;
+            font-size: 1.8rem;
+            font-weight: 400;
+            text-decoration: none;
+            text-transform: capitalize; 
+        }
+    }
+}
+
+.menu {
+    height: 2.6rem;
+    width: 3.5rem;
+    position: relative;
+    z-index: 99;
+
+    @media only screen and(min-width: $medium-device) {
+       display: none;
+    }
+
+    &--line {
+        height: .2rem;
+        width: 100%;
+        background-color: $white;
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+}
