@@ -26,29 +26,6 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background-color: rgba(0, 0, 0, 0.8); }
 
-.loader {
-  position: absolute;
-  top: 0%;
-  right: 0%;
-  bottom: 0%;
-  left: 0%;
-  height: 100%;
-  width: 100%;
-  z-index: 100;
-  background-color: #F0F0F0;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  .loader--text {
-    color: #2a2a2a;
-    font-family: 'Audiowide', cursive;
-    font-size: 3.6rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    width: 90%;
-    margin: 0 auto;
-    text-align: center; }
-
 .wrapper {
   width: 90%;
   max-width: 1600px;
@@ -64,6 +41,24 @@ body {
 ul {
   list-style: none; }
 
+.loader {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  background-color: #F0F0F0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .loader--text {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center; }
+
 html {
   font-size: 62.5%; }
 
@@ -71,6 +66,13 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
   font-weight: 400; }
+
+.loader--text {
+  color: #2a2a2a;
+  font-family: 'Audiowide', cursive;
+  font-size: 3.6rem;
+  font-weight: 300;
+  text-transform: uppercase; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins", sans-serif;
@@ -260,9 +262,6 @@ button {
     margin-right: auto; }
   .header__right {
     display: flex; }
-
-.bgheader {
-  background-color: #78857E; }
 
 .nav {
   display: none; }
@@ -675,17 +674,18 @@ button {
         margin-bottom: 5rem; }
 
 .sponsors {
-  padding: 5rem 0rem; }
+  padding: 10rem 0rem; }
   .sponsors .wrapper {
     flex-direction: column;
     overflow: hidden; }
   .sponsors .scroll__text {
     display: grid;
-    grid-template-columns: repeat(4, 100%); }
+    grid-template-columns: repeat(4, 100%);
+    margin-bottom: 3.5rem; }
     .sponsors .scroll__text p {
       width: 100%; }
   .sponsors .line {
-    height: 2px;
+    height: 1px;
     width: 100%;
     background-color: #F0F0F0;
     margin-bottom: 7.5rem;
@@ -697,9 +697,9 @@ button {
     left: 0%;
     transform: translateY(-50%);
     background-color: #000;
-    height: 4px;
+    height: 3px;
     width: 0%;
-    animation: timeline 5s ease-in infinite; }
+    animation: timeline 5s linear infinite; }
   .sponsors__icons ul {
     display: flex; }
   .sponsors__icons li {
@@ -710,12 +710,6 @@ button {
       height: 3.6rem;
       width: 3.6rem; }
 
-@keyframes timeline {
-  0% {
-    width: 0%; }
-  100% {
-    width: 100%; } }
-
 .how-it-works {
   padding: 10rem 0rem;
   background-image: url(../../images/texture-bg.jpg);
@@ -723,7 +717,8 @@ button {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: #fff; }
+  color: #fff;
+  transition: all .5s linear; }
   .how-it-works ul {
     margin-top: 5rem; }
   .how-it-works li {

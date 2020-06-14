@@ -11,6 +11,16 @@ body {
     font-weight: 400;
 }
 
+.loader {
+    &--text {
+        color: #2a2a2a;
+        font-family: 'Audiowide', cursive;;
+        font-size: 3.6rem;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-primary;
     font-weight: 400;

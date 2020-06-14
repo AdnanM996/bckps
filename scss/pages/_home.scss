@@ -150,7 +150,7 @@
 }
 
 .sponsors {
-    padding: 5rem 0rem;
+    padding: 10rem 0rem;
 
     .wrapper {
         flex-direction: column;
@@ -160,6 +160,7 @@
     & .scroll__text {
         display: grid;
         grid-template-columns: repeat(4, 100%);
+        margin-bottom: 3.5rem;
         
 
         & p {
@@ -168,7 +169,7 @@
     }
 
     & .line {
-        height: 2px;
+        height: 1px;
         width: 100%;
         background-color: $grey-light;
         margin-bottom: 7.5rem;
@@ -182,9 +183,9 @@
         left: 0%;
         transform: translateY(-50%);
         background-color: #000;
-        height: 4px;
+        height: 3px;
         width: 0%;
-        animation: timeline 5s ease-in infinite;
+        animation: timeline 5s linear infinite;
     }
 
     &__icons {
@@ -206,21 +207,12 @@
     }
 }
 
-@keyframes timeline {
-    0% {
-        width: 0%;
-    }
-
-    100% {
-        width: 100%;
-    }
-}
-
 .how-it-works {
     padding: 10rem 0rem;
     background-image: url(../../images/texture-bg.jpg);
     @include bg;
     color: $white;
+    transition: all .5s linear;
 
     & ul {
         margin-top: 5rem;

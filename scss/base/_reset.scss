@@ -32,32 +32,6 @@ body {
     }
 }
 
-.loader {
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    bottom: 0%;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    z-index: 100;
-    background-color: $grey-light;
-    display: flex;
-    @include center-center;
-
-    &--text {
-        color: #2a2a2a;
-        font-family: 'Audiowide', cursive;;
-        font-size: 3.6rem;
-        font-weight: 300;
-        text-transform: uppercase;
-        width: 90%;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-}
-
 .wrapper {
     width: 90%;
     max-width: 1600px;
@@ -74,4 +48,25 @@ body {
 
 ul {
     list-style: none;
+}
+
+.loader {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    background-color: $grey-light;
+    display: flex;
+    @include center-center;
+
+    &--text {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
 }
