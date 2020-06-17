@@ -43,6 +43,15 @@
             background-color: $text-dark;
         }
     }
+
+    &--full {
+        display: inline-block;
+        width: auto;
+
+        &::after {
+            display: none;
+        }
+    }
 }
 
 button {
@@ -78,4 +87,12 @@ button {
             transform: translateY(-100%);
         }
     }
+}
+
+.btn--cart {
+    height: auto;
+    width: auto;
+    padding: 5px;
+    color: $white;
+    background-color: $text-dark;
 }

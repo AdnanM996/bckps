@@ -8,9 +8,6 @@
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
 </head>
 <body id="account">
-    <!--<section class="loader">
-        <p class="loader--text">backpacks</p>
-    </section>-->
     <header class="header" id="header">
         <div class="wrapper">
             <div class="header__left">
@@ -52,8 +49,8 @@
             </div>
 
             <form class="account--form">
-                <input type="email" placeholder="Eamil" required>
-                <input type="password" placeholder="Password" required>
+                <input type="email" id="email" placeholder="Eamil">
+                <input type="password" id="password" placeholder="Password">
                 <a href="account-recover.html" class="action">Forgot your password</a>
 
                 <div class="buttons">
@@ -163,5 +160,6 @@ if(document.body.id === 'account') {
 }
 
 </script>
+<script src="js/form-validator.js"></script>
 </body>
 </html>

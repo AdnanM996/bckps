@@ -27,7 +27,7 @@ function parallaxScrolling(){
 
 function matrix3d() {
     window.addEventListener('scroll', () => {
-        let scroll = this.pageYOffset / 20;
+        let scroll = this.pageYOffset / 30;
 
         let container = document.querySelector('.body--container');
         container.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${-scroll}, 0, 1)`;
