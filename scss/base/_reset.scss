@@ -76,7 +76,7 @@ ul {
     top: 0;
     right: 0;
     height: 100%;
-    width: 50%;
+    width: 100%;
     background-color: $grey-light;
     z-index: 5;
     padding: 7rem 2.5rem 2.5rem 2.5rem;
@@ -87,17 +87,27 @@ ul {
     flex-direction: column;
     overflow-y: scroll;
 
+    @media only screen and(min-width: $medium-device) {
+        width: 50%;
+    }
+
+    @media only screen and(min-width: $large-device) {
+        width: 50%;
+    }
+
+    @media only screen and(min-width: $extra-large-device) {
+        width: 30%;
+    }
+ 
     &__item {
-       display: flex;
+        display: flex;
         justify-content: space-between;
         align-items: center;  
-        text-align: center;
         border: 1px solid $grey-dark;
         padding: 1rem;
         width: 100%;
-        position: relative;
         animation: cart .3s ease;
-        
+
         &:not(:last-child) {
             margin-bottom: 2.5rem;
         }
@@ -110,7 +120,7 @@ ul {
         &--img {
             display: inline-block;
             height: 5rem;
-            width: 5rem;
+            max-width: 5rem;
             object-fit: cover;
             margin-right: 2.5rem;
         }
@@ -140,21 +150,22 @@ ul {
         }
     }
 
-    &__footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding: 2rem 1rem;
-        border: 1px solid $text-dark;
-    
-        & .clear,
-        & .pay {
-            width: auto;
-            height: auto;
-            display: inline-block;
-            padding: 5px;
-        }
+}
+
+.cart__footer {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 1rem;
+    border: 1px solid $grey-dark;
+
+    & .clear,
+    & .pay {
+        width: auto;
+        height: auto;
+        display: inline-block;
+        padding: 5px;
     }
 }
 

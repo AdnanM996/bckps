@@ -74,3 +74,17 @@ function slider() {
         slider.scrollLeft = scrollLeft - walk;
     });
 }
+
+//Open Close Nav
+function nav() {
+    const menu = document.querySelector('.menu');
+    const nav = document.querySelector('.nav');
+    const logo = document.querySelector('.logo');
+
+    menu.addEventListener('click', () => {
+        nav.classList.toggle('open-nav');
+        logo.classList.toggle('logo--dark');
+    })
+}
+
+nav();

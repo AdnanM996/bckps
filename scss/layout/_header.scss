@@ -15,15 +15,8 @@
     & .logo {
         position: relative;
         z-index: 99;
-        & a {
-            color: $white;
-            display: inline-block;
-            font-size: 2rem;
-            font-weight: 400;
-            letter-spacing: .3rem;
-            text-transform: uppercase;
-            text-decoration: none;
-        }
+        display: inline-block;
+        transition: all .3s ease;
     }
 
     &__left {
@@ -36,20 +29,8 @@
     &__right {
         display: flex;
     }
-
-    &--scroll {
-        //animation: header .5s cubic-bezier(1, 0, 0, 1);
-        background-color: $white;
-        //transition: all .5s cubic-bezier(1, 0, 0, 1);
-    }
 }
 
-@keyframes header {
-    0% {
-    transform: translateY(-100%);
-    }
-
-    100% {
-    transform: translateY(0%);
-    }
+.logo--dark {
+    color: $text-dark;
 }

@@ -54,21 +54,7 @@
             z-index: 2;
         }
 
-        & .cta--full {
-            color: $white;
-            color: pointer;
-            display: inline-block;
-            padding: 1.6rem 3.2rem;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(385%);
-            transition: all .5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-            background-color: $text-dark;
-            z-index: 2;
-        }
-
-        &:hover .cta--full {
+        &:hover .add-to-cart {
             transform: translateX(-50%) translateY(0%);
         }
 

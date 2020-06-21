@@ -47,7 +47,7 @@ addToCartButtonsDOM.forEach((addToCartButtonDOM) => {
 })
 
 function insertItemToDom(product) {
-    cartDOM.insertAdjacentHTML('beforeEnd', `
+    cartDOM.insertAdjacentHTML('afterBegin', `
         <div class="cart__item">
             <div class="cart__item__info">
                 <img class="cart__item--img" src="${product.image}">
@@ -63,7 +63,7 @@ function insertItemToDom(product) {
         </div>
     `);
 
-    addCartFooter(cartDOM);
+    addCartFooter();
 }
 
 function handleActionButtons(addToCartButtonDOM, product) {
@@ -118,7 +118,7 @@ function removeItem(product, cartItemDOM, addToCartButtonDOM) {
     })
 }
 
-function addCartFooter(cartDOM){
+function addCartFooter(){
     if (document.querySelector('.cart__footer') === null) {
         cartDOM.insertAdjacentHTML('beforeEnd', `
             <div class="cart__footer">
@@ -130,7 +130,7 @@ function addCartFooter(cartDOM){
         document.querySelector('[data-action="CLEAR_CART"]').addEventListener('click', () => clearCart());
         document.querySelector('[data-action="CHECKOUT"]').addEventListener('click', () => checkout());
     }
-}
+};
 
 function clearCart() {
     cartDOM.querySelectorAll('.cart__item').forEach(cartItem => {

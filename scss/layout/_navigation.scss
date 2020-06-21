@@ -1,10 +1,52 @@
 .nav {
-    display: none;
+    display: flex;
+    @include center-center;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 25;
+    height: 100vh;
+    width: 100%;
+    background-color: $grey-light;
+    transform: translateY(-100%);
+    transition: all .5s cubic-bezier(1, 0, 0, 1);
+
+    & ul {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    & li {
+        &:not(:last-child) {
+            margin-right: 2.5rem;
+        }
+    }
+
+    & a {
+        color: $text-dark;
+        display: inline-block;
+        font-size: 3.6rem;
+        font-weight: 400;
+        text-align: center;
+        text-decoration: none;
+        text-transform: capitalize;
+    }
 
     @media only screen and(min-width: $medium-device) {
         display: flex;
+        transform: translateY(0%);
+        position: relative;
+        height: auto;
+        width: auto;
+        background-color: transparent;
+
         & ul {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
             margin-right: 5rem;
         }
         & li {
@@ -53,38 +95,6 @@
             }
         }
     }
-
-    //Open-nav
-    &__open {
-        display: flex;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 10;
-        height: 100%;
-        width: 100%;
-        background-color: $white;
-        padding: 5rem 2.5rem;
-
-        & ul {
-            width: 100%;
-        }
-
-        & li {
-            &:not(:last-child) {
-                margin: $margin-25;
-            }
-        }
-
-        & a {
-            color: $text-dark;
-            display: inline-block;
-            font-size: 1.8rem;
-            font-weight: 400;
-            text-decoration: none;
-            text-transform: capitalize; 
-        }
-    }
 }
 
 .menu {
@@ -101,8 +111,15 @@
         height: .2rem;
         width: 100%;
         background-color: $white;
+
         &:not(:last-child) {
             margin-bottom: 1rem;
         }
     }
+}
+
+//Open-nav
+.open-nav {
+    transform: translateY(0%);
+    transition: all .5s cubic-bezier(1, 0, 0, 1);
 }
