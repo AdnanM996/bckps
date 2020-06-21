@@ -1,5 +1,22 @@
-//Parallax Scrolling
+if (document.body.id === 'home') {
+    matrix3d();
+    parallaxScrolling();
+    slider();
+}
 
+if(document.body.id === 'account') {
+    matrix3d();
+}
+
+if(document.body.id === 'acc-register') {
+    matrix3d();
+}
+
+if(document.body.id === 'recover') {
+    matrix3d();
+}
+
+//Parallax Scrolling
 function parallaxScrolling(){
     window.addEventListener('scroll', () => {
         let scroll = this.pageYOffset;
@@ -14,14 +31,8 @@ function parallaxScrolling(){
         choiseText1.style.transform = `translateY(${-(scroll / 30) + '%'})`;
         choiseText2.style.transform = `translateY(${-(scroll / 30) + '%'})`;
         
-        
         splitText1.style.transform = `translateY(${-(scroll / 50) + '%'})`;
         splitText2.style.transform = `translateY(${-(scroll / 50) + '%'})`;
-
-       /* const slider = document.querySelector('.slider__container');
-
-        slider.style.transform = `translateX(${-(scroll / 50)+ '%'})`;
-        slider.style.transform = 'transition all .5s ease';*/
     });
 };
 
@@ -34,32 +45,32 @@ function matrix3d() {
     });
 };
 
-matrix3d();
-parallaxScrolling();
+//Slider 
+function slider() {
+    const slider = document.querySelector('.slider');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
-const slider = document.querySelector('.slider');
-let isDown = false;
-let startX;
-let scrollLeft;
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
 
-slider.addEventListener('mousedown', (e) => {
-    isDown = true;
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-});
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
 
-slider.addEventListener('mouseleave', () => {
-    isDown = false;
-});
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+    });
 
-slider.addEventListener('mouseup', () => {
-    isDown = false;
-});
-
-slider.addEventListener('mousemove', (e) => {
-    if(!isDown) return; // stop fn from running;
-    e.preventDefault();
-    let x = e.pageX- slider.offsetLeft;
-    let walk = (x - startX) * 2;
-    slider.scrollLeft = scrollLeft - walk;
-});
+    slider.addEventListener('mousemove', (e) => {
+        if(!isDown) return; // stop fn from running;
+        e.preventDefault();
+        let x = e.pageX- slider.offsetLeft;
+        let walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+    });
+}

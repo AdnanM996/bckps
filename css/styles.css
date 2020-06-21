@@ -67,33 +67,86 @@ ul {
   width: 50%;
   background-color: #F0F0F0;
   z-index: 5;
-  padding: 3rem;
+  padding: 7rem 2.5rem 2.5rem 2.5rem;
+  transform: translateX(100%);
   transition: all 0.5s cubic-bezier(1, 0, 0, 1);
   display: flex;
   align-items: flex-start;
-  flex-direction: column; }
+  flex-direction: column;
+  overflow-y: scroll; }
   .cart__item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    border: 2px solid #78857E;
-    padding: 10px 0px;
-    width: 100%; }
+    border: 1px solid #78857E;
+    padding: 1rem;
+    width: 100%;
+    position: relative;
+    animation: cart .3s ease; }
     .cart__item:not(:last-child) {
       margin-bottom: 2.5rem; }
+    .cart__item__info {
+      display: flex;
+      align-items: center; }
+    .cart__item--img {
+      display: inline-block;
+      height: 5rem;
+      width: 5rem;
+      object-fit: cover;
+      margin-right: 2.5rem; }
+    .cart__item--name {
+      font-size: 1.4rem;
+      margin-right: 2.5rem; }
+    .cart__item--price {
+      font-size: 1.6rem;
+      font-weight: 500; }
+    .cart__item--buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+    .cart__item__quantity {
+      margin-right: 2.5rem;
+      border: 1px solid #020202;
+      padding: 1rem .8rem;
+      font-size: 1.4rem;
+      line-height: 1; }
+  .cart__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 1rem;
+    border: 1px solid #4A4A4A; }
+    .cart__footer .clear,
+    .cart__footer .pay {
+      width: auto;
+      height: auto;
+      display: inline-block;
+      padding: 5px; }
 
 .open--cart {
   transform: translateX(0%); }
 
-.cart__item__img {
-  height: 50px;
-  width: 50px;
-  object-fit: cover; }
-
 :disabled {
   opacity: .8;
   cursor: not-allowed; }
+
+.product--price {
+  position: relative; }
+  .product--price::after {
+    content: '$';
+    position: absolute;
+    top: 0%;
+    right: -1rem; }
+
+@keyframes cart {
+  0% {
+    margin-left: -100%;
+    opacity: 0; }
+  100% {
+    margin-left: 0;
+    opacity: 1; } }
 
 html {
   font-size: 62.5%; }
@@ -216,20 +269,22 @@ h3 {
     .cta--full::after {
       display: none; }
 
-button {
+.submit {
+  margin-right: 2.5rem; }
+
+button[type="submit"] {
   color: #fff;
   cursor: pointer;
   border: none;
   border: 1px solid #020202;
   display: inline-block;
   font-size: 1.6rem;
-  margin-right: 2.5rem;
   padding: 1.6rem 12rem;
   position: relative;
   overflow: hidden;
   z-index: 2;
   transition: all 0.5s cubic-bezier(1, 0, 0, 1); }
-  button::after {
+  button[type="submit"]::after {
     content: '';
     position: absolute;
     left: 0;
@@ -240,17 +295,41 @@ button {
     background-color: #2a2a2a;
     z-index: -1;
     transition: all 0.5s cubic-bezier(1, 0, 0, 1); }
-  button:hover {
+  button[type="submit"]:hover {
     color: #020202; }
-    button:hover::after {
+    button[type="submit"]:hover::after {
       transform: translateY(-100%); }
 
 .btn--cart {
-  height: auto;
-  width: auto;
-  padding: 5px;
-  color: #fff;
-  background-color: #4A4A4A; }
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.4rem;
+  line-height: 1.3;
+  padding: .8rem;
+  outline-width: 0;
+  transition: all .3s ease; }
+  .btn--cart:not(:last-child) {
+    margin-right: 2.5rem; }
+  .btn--cart--decrese {
+    background-color: transparent;
+    border: 1px solid #020202;
+    color: #020202; }
+    .btn--cart--decrese:active {
+      background-color: #020202;
+      color: #fff; }
+  .btn--cart--increase {
+    background-color: #020202;
+    border: 1px solid #020202;
+    color: #fff; }
+    .btn--cart--increase:active {
+      background-color: rgba(2, 2, 2, 0.5);
+      color: #fff; }
+  .btn--cart--remove {
+    background-color: #ff0000;
+    border: 1px solid #ff0000;
+    color: #fff; }
 
 .slider {
   padding: 10rem 0rem;
@@ -284,9 +363,6 @@ button {
   width: 100%;
   padding: 2rem 0rem;
   background-color: #78857E; }
-  @media only screen and (min-width: 768px) {
-    .header {
-      background-color: transparent; } }
   .header .wrapper {
     width: 95%;
     justify-content: space-between;
@@ -310,6 +386,14 @@ button {
     margin-right: auto; }
   .header__right {
     display: flex; }
+  .header--scroll {
+    background-color: #fff; }
+
+@keyframes header {
+  0% {
+    transform: translateY(-100%); }
+  100% {
+    transform: translateY(0%); } }
 
 .nav {
   display: none; }
@@ -429,6 +513,8 @@ button {
       left: 2.5rem;
       z-index: 2; }
     .row .product .cta--full {
+      color: #fff;
+      color: pointer;
       display: inline-block;
       padding: 1.6rem 3.2rem;
       position: absolute;
@@ -496,8 +582,8 @@ button {
   .account--form input[type="password"] {
     background-color: transparent;
     border: none;
-    border: 1px solid #000;
-    color: #000;
+    border: 1px solid #F0F0F0;
+    color: #78857E;
     display: inline-block;
     font-size: 1.4rem;
     font-weight: 300;
@@ -505,7 +591,12 @@ button {
     margin-bottom: 2.5rem;
     outline-width: 0;
     padding: 1rem;
-    width: 100%; }
+    width: 100%;
+    transition: all .5s ease; }
+    .account--form input[type="text"]:focus,
+    .account--form input[type="email"]:focus,
+    .account--form input[type="password"]:focus {
+      border: 1px solid #78857E; }
   .account--form .buttons {
     display: flex;
     justify-content: space-between;
@@ -720,43 +811,6 @@ button {
         margin-bottom: 2.5rem; }
       .bag-text__right .text__area p {
         margin-bottom: 5rem; }
-
-.sponsors {
-  padding: 10rem 0rem; }
-  .sponsors .wrapper {
-    flex-direction: column;
-    overflow: hidden; }
-  .sponsors .scroll__text {
-    display: grid;
-    grid-template-columns: repeat(4, 100%);
-    margin-bottom: 3.5rem; }
-    .sponsors .scroll__text p {
-      width: 100%; }
-  .sponsors .line {
-    height: 1px;
-    width: 100%;
-    background-color: #F0F0F0;
-    margin-bottom: 7.5rem;
-    position: relative;
-    overflow: hidden; }
-  .sponsors .timeline {
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    transform: translateY(-50%);
-    background-color: #000;
-    height: 3px;
-    width: 0%;
-    animation: timeline 5s linear infinite; }
-  .sponsors__icons ul {
-    display: flex; }
-  .sponsors__icons li {
-    cursor: pointer; }
-    .sponsors__icons li:not(:last-child) {
-      margin-right: 5rem; }
-    .sponsors__icons li img {
-      height: 3.6rem;
-      width: 3.6rem; }
 
 .how-it-works {
   padding: 10rem 0rem;

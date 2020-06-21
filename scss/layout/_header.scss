@@ -6,9 +6,6 @@
     width: 100%;
     padding: 2rem 0rem;
     background-color: $grey-dark;
-    @media only screen and(min-width: $medium-device) {
-        background-color: transparent;
-    }
 
     & .wrapper {
         width: 95%;
@@ -38,5 +35,21 @@
 
     &__right {
         display: flex;
+    }
+
+    &--scroll {
+        //animation: header .5s cubic-bezier(1, 0, 0, 1);
+        background-color: $white;
+        //transition: all .5s cubic-bezier(1, 0, 0, 1);
+    }
+}
+
+@keyframes header {
+    0% {
+    transform: translateY(-100%);
+    }
+
+    100% {
+    transform: translateY(0%);
     }
 }

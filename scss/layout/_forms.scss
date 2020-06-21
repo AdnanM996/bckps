@@ -51,9 +51,8 @@
     input[type="password"] {
         background-color: transparent;
         border: none;
-        border: 1px solid #000;
-        //color: $grey-light;
-        color: #000;
+        border: 1px solid $grey-light;
+        color: $grey-dark;
         display: inline-block;
         font-size: 1.4rem;
         font-weight: 300;
@@ -62,6 +61,11 @@
         outline-width: 0;
         padding: 1rem;
         width: 100%;
+        transition: all .5s ease;
+
+        &:focus {
+            border: 1px solid $grey-dark;
+        }
     }
 
     & .buttons {

@@ -22,7 +22,7 @@ if(document.body.id === 'home') {
 
     .from('#header', 1, {
         opacity: 0,
-        y: 50,
+        y: -50,
         ease: Expo.easeInOut
     })
 
@@ -79,22 +79,6 @@ if(document.body.id === 'home') {
     .setTween(timeline3)
     .addTo(controller);
 
-    //tl4
-    let timeline4 = new TimelineMax();
-
-    timeline4
-    .staggerFrom(['#sponsorsHeading, .sponsors--paragraph, .line'], 1 ,{
-        opacity: 0,
-        y: 10,
-    }, 0.2)
-
-    let scene4 = new ScrollMagic.Scene({
-        triggerElement: '#bagImg',
-        triggerHook: 0
-    })
-    .setTween(timeline4)
-    .addTo(controller);
-
     //tl5
     let timeline5 = new TimelineMax();
 
@@ -105,7 +89,7 @@ if(document.body.id === 'home') {
     }, 0.2)
 
     let scene5 = new ScrollMagic.Scene({
-        triggerElement: '.line',
+        triggerElement: '#bagCta',
         triggerHook: 0
     })
     .setTween(timeline5)

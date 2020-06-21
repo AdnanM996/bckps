@@ -149,64 +149,6 @@
     }
 }
 
-.sponsors {
-    padding: 10rem 0rem;
-
-    .wrapper {
-        flex-direction: column;
-        overflow: hidden;
-    }
-
-    & .scroll__text {
-        display: grid;
-        grid-template-columns: repeat(4, 100%);
-        margin-bottom: 3.5rem;
-        
-
-        & p {
-            width: 100%;
-        }
-    }
-
-    & .line {
-        height: 1px;
-        width: 100%;
-        background-color: $grey-light;
-        margin-bottom: 7.5rem;
-        position: relative;
-        overflow: hidden;
-    }
-
-    & .timeline {
-        position: absolute;
-        top: 50%;
-        left: 0%;
-        transform: translateY(-50%);
-        background-color: #000;
-        height: 3px;
-        width: 0%;
-        animation: timeline 5s linear infinite;
-    }
-
-    &__icons {
-        & ul {
-            display: flex;
-        }
-
-        & li {
-            cursor: pointer;
-            &:not(:last-child) {
-                margin-right: 5rem;
-            }
-
-            & img {
-                height: 3.6rem;
-                width: 3.6rem;
-            }
-        }
-    }
-}
-
 .how-it-works {
     padding: 10rem 0rem;
     background-image: url(../../images/texture-bg.jpg);

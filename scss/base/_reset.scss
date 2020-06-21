@@ -79,25 +79,81 @@ ul {
     width: 50%;
     background-color: $grey-light;
     z-index: 5;
-    padding: 3rem;
-    //transform: translateX(100%);
+    padding: 7rem 2.5rem 2.5rem 2.5rem;
+    transform: translateX(100%);
     transition: all .5s cubic-bezier(1, 0, 0, 1);
     display: flex;
-   // justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
+    overflow-y: scroll;
 
     &__item {
        display: flex;
         justify-content: space-between;
         align-items: center;  
         text-align: center;
-        border: 2px solid $grey-dark;
-        padding: 10px 0px;
+        border: 1px solid $grey-dark;
+        padding: 1rem;
         width: 100%;
+        position: relative;
+        animation: cart .3s ease;
         
         &:not(:last-child) {
             margin-bottom: 2.5rem;
+        }
+
+        &__info {
+            display: flex;
+            align-items: center;
+        }
+
+        &--img {
+            display: inline-block;
+            height: 5rem;
+            width: 5rem;
+            object-fit: cover;
+            margin-right: 2.5rem;
+        }
+
+        &--name {
+            font-size: 1.4rem;
+            margin-right: 2.5rem;
+        }
+
+        &--price {
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+
+        &--buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__quantity {
+            margin-right: 2.5rem;
+            border: 1px solid #020202;
+            padding: 1rem .8rem;
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 2rem 1rem;
+        border: 1px solid $text-dark;
+    
+        & .clear,
+        & .pay {
+            width: auto;
+            height: auto;
+            display: inline-block;
+            padding: 5px;
         }
     }
 }
@@ -106,13 +162,30 @@ ul {
     transform: translateX(0%); 
 }
 
-.cart__item__img {
-    height: 50px;
-    width: 50px;
-    object-fit: cover;
-}
-
 :disabled {
     opacity: .8;
     cursor: not-allowed;
+}
+
+.product--price {
+    position: relative;
+
+    &::after {
+        content: '$';
+        position: absolute;
+        top: 0%;
+        right: -1rem;
+    }
+}
+
+@keyframes cart {
+    0% {
+        margin-left: -100%;
+        opacity: 0;
+    }
+
+    100% {
+        margin-left: 0;
+        opacity: 1;
+    }
 }
